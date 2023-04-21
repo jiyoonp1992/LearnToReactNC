@@ -41,4 +41,46 @@ const playerFat = "little bit";
 
 //object
 
-const player
+const player = {
+    name:"nico",
+    points:10,
+    fat:true ,
+};
+console.log(player);
+player.lastName = "potato";
+console.log(player);
+
+// function sayHello(){
+//     console.log("Hello my name is");
+// }
+function sayHello(nameOfPerson, age){
+    console.log("Hello my name is" + nameOfPerson + " and I'm" + age);
+}
+
+
+sayHello("nico", 10);
+sayHello("dal", 23);
+sayHello("lynn", 21);
+
+// function plus(a,b){
+//     console.log(a+b);
+// }
+
+function plus(firstNumber, secondNumber){
+    console.log(firstNumber + secondNumber);
+}
+function divide(a,b){
+    console.log(a / b);
+}
+
+plus(5,5); 
+divide(98,20);
+
+const player01 = {
+    name : "nico",
+    sayHello02 : function(otherPersonsName) {
+        console.log("hello! " + otherPersonsName + " nice to meet you!");
+    },
+};
+console.log(player01.name);
+player01.sayHello02("lynn");
