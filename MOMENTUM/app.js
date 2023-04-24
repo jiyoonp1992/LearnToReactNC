@@ -84,3 +84,44 @@ const player01 = {
 };
 console.log(player01.name);
 player01.sayHello02("lynn");
+
+const toBuy = ["potato", "tomato", "pizza"];
+console.log(toBuy);
+toBuy[2] = "water";
+console.log(toBuy);
+toBuy.push("meat");
+console.log(toBuy);
+
+const calculator = {
+    add : function (a, b){
+        console.log(a,b);
+    },
+
+    minus: function (a, b) {
+        console.log(a - b);
+    },
+
+    times: function (a, b) {
+        console.log(a * b);
+    },
+
+    divide: function (a, b) {
+        console.log (a / b);
+    },
+
+    power: function (a, b) {
+        console.log (a ** b);
+    }
+};
+
+calculator.add(5,1);
+
+const age = 90;
+
+function calculateKrAge(ageOfForeigner){
+    return ageOfForeigner + 2;
+}
+
+const krAge = calculateKrAge(age);
+
+console.log(krAge);
