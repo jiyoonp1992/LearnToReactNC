@@ -1,39 +1,26 @@
-//document.title = "Hello! From JS!"
+const h1 = document.querySelector("div.hello:first-child h1");
 
- const title = document.getElementById("title");
- console.log(title);
- console.dir(title);
+// function handleTitleClick(){
+//     if(h1.style.color === "blue"){
+//         h1.style.color = "tomaot";
+//     } else {
+//         h1.style.color = "blue";
+//     }
+//     console.log("title was clicked!");
+//     title05.style.color = "red";
+// }
 
- //title.innerText = "Got you!"
-
- //console.log(title.id);
-// console.log(title.className);
-
-const hellos = document.getElementsByClassName("hello");
-
-console.log(hellos);
-
-const title01 = document.getElementsByTagName("h1");
-console.log(title01);
-
-const title02 = document.querySelector (".hello h1");
-console.log(title02);
-
-const title03 = document.querySelectorAll (".hello h1");
-console.log(title03);
-
-const title04 = document.querySelector (".hello h1");
-title04.innerText = "Hello";
-
-const title05 = document.querySelector("div.hello:first-child h1");
-
-console.dir(title05);
-
-title05.style.color = "blue";
 
 function handleTitleClick(){
+    const currentColor = h1.style.color;
+    let newColor;
+    if(currentColor === "blue"){
+        newColor = "tomaot";
+    } else {
+        newColor = "blue";
+    }
     console.log("title was clicked!");
-    title05.style.color = "red";
+    h1.style.color = newColor;
 }
 
 title05.addEventListener("click", handleTitleClick);
