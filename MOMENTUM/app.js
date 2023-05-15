@@ -2,10 +2,13 @@ const loginForm = document.getElementById("login-form");
 const loginForm01 = document.querySelector("#login-form");
 const loginInput = loginForm.querySelector("input");
 const loginButton = loginForm.querySelector("button");
+const greeting = document.querySelector("#greeting");
 
 
 const loginInput01 = document.querySelector("#login-form input");
 const loginButton02 = document.querySelector("#login-form button");
+
+const HIDDEN_CLASSNAME = "hidden";
 
 function onLoginBtnClick(){
     console.dir(loginInput);
@@ -21,22 +24,27 @@ function onLoginBtnClick(){
     //or form에서 수정
 }
 
-loginButton.addEventListener("click", onLoginBtnClick);
+//loginButton.addEventListener("click", onLoginBtnClick);
 
 
-function onLoginSubmot(event){
+function onLoginSubmit(event){
+    event.preventDefault();
+    loginForm01.classList.add(HIDDEN_CLASSNAME);
     const username01 = loginInput.value;
-    console.log(username01);
-    console.log(event);
+    greeting.innerText = "Hello " + username01;
+    greeting.innerText = `Hello ${username01}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+    localStorage.getItem("username", username01);
 }
+
 loginForm.addEventListener("submit", onLoginSubmit);
 
-const link = document.querySelector("a");
+// const link = document.querySelector("a");
 
-function handleLinkClick(event){
-    console.log(event);
-    alert("clicked!");
-    event.preeventDefault();
-}
+// function handleLinkClick(event){
+//     console.log(event);
+//     alert("clicked!");
+//     event.preeventDefault();
+// }
 
-link.addEventListener("click", handleLinkClick);
+// link.addEventListener("click", handleLinkClick);
