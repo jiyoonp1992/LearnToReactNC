@@ -7,7 +7,9 @@
     <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
     <script>
         const root = document.getElementById("root");
-        const span = React.createElement("span", {id: "go_span"}, "Hello I'm a span");
-        ReactDOM.render(span, root);
+        const span = React.createElement("span", {id: "go_span", style : {color : "red"}}, "Hello I'm a span");
+        const btn = React.createElement("button", null, "Click me!");
+//        ReactDOM.render(span, root);
+        ReactDOM.render(btn, root);
     </script>
 </html>
