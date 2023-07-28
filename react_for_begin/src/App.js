@@ -1,29 +1,34 @@
 import {useState, useEffect} from "react";
 
 function App() {
-  const [counter, setValue] = useState(0);
-  const [keyWord, setKeyWord] = useState("");
-  const onChange = (event) => setKeyWord(event.target.value);
 
-  const onClick = () => setValue((prev) => prev + 1);
-  console.log("Call an api");
-  useEffect(() =>{
-    console.log("CALL THE API>>>>>");
-  }, []);
-  useEffect(() =>{
-    if(keyWord !== "" && keyWord.length > 5){
-      console.log("SEARCH FOR", keyWord);
+  const [toDo, setToDo] = useState("");
+  const [toDos, setToDos] = useState([]);
+  const onChange = (event) => setToDo(event.target.value);
+  const onSubmit = (event) => {
+    event.preventDefault();
+    if(toDo === ""){
+      return;
     }
-  }, [keyWord]);
-  
-  
+    setToDos((currentArray) => [toDo, ...currentArray]);
+    setToDo("");
+  };
+  console.log(toDos);
+
   return (
     <div>
-      <input onChange={onChange} type="text" placeholder="Search here" value={keyWord}  />
-      <h1>{counter}</h1>
-      <button onClick={onClick}>click me</button>
+      <h1>My To Dos ({toDos.length})</h1>
+      <form onSubmit={onSubmit}>
+        <input type="text" placeholder="Write your to do..." value={toDo} onChange={onChange}/>
+        <button>Add To Do</button>
+      </form>
+      <hr />
+      <ul>
+        {toDos.map((item, index) => 
+          <li key={index}>{item}</li>
+        )}
+      </ul>
     </div>
-    
   );
 }
 
